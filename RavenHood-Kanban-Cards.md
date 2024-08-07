@@ -34,177 +34,165 @@ For this project, the README.md file will include the API documentation and the 
 - [ ] Discuss wireframing of RavenHood based off of User Stories, Feature List, and the layout of RobinHood
 - [ ] Create a Scrum Board detailing the flow of the project - discuss what the members of the group will be doing for the project, what can be contributed and how it will all come together (TO BE COMPLETED BY WEEK 19 - DAY 5)
 - [ ] Create a `.gitignore` that ignores `*.db`, `.env`, `build`, `__pycache__` - see attached .gitignore for examples and what they pertain to
-- [ ] Ensure there are more branches besides main. Branches to consider: `dev`, `auth-setup`, `login`, `sign-up`, `logout`, `get-session`, `validate-login-inputs`, `validate-signup-inputs`
+- [ ] Ensure there are more branches besides main. Branches to consider: `dev`, `auth-setup`, `login`, `sign-up`, `logout`, `get-session`, `validate-login-inputs`, `validate-signup-inputs`, `feature-1`, `feature-2`
 - [ ] Impose branch protection rules for each branch
+- [ ] Push to dev at the end of each day, discuss with teammates on what was completed and who completed what
+- [ ] Push to main ONLY when ready to test to Render
 
 ### Authentication Required
 
 All endpoints that require a current user to be logged in receive a standard
 authentication response.
 
-- [X] Authentication middleware responds with error status 401 when
+- [ ] Authentication middleware responds with error status 401 when
   authentication is not provided
-
 
 ### Authorization Required
 
 All endpoints that require a current user to have the correct role(s) or
 permission(s) receive a standard authorization response.
 
-- [X] Authorization middleware responds with error status 403 when
+- [ ] Authorization middleware responds with error status 403 when
   an authenticated user does not have the correct role(s) or permission(s)
-
 
 ### Sign Up a User
 
 Creates a new user, logs them in as the current user, and returns the current
 user's information.
 
-- [X] New user exists in the database after request
-- [X] Successful response includes newly created `id`, `firstName`, `lastName`,
+- [ ] New user exists in the database after request
+- [ ] Successful response includes newly created `id`, `firstName`, `lastName`,
   and `email`
-- [X] Error response with status 500 is given when the specified email or username
+- [ ] Error response with status 500 is given when the specified email or username
   already exists
-- [X] Error response with status 400 is given when body validations for the
+- [ ] Error response with status 400 is given when body validations for the
   `email`, `firstName`, or `lastName` are violated
-
 
 ### Log In a User
 
 Logs in a current user with valid credentials and returns the current user's
 information.
 
-- [X] Successful response includes the user's `id`, `firstName`, `lastName`,
+- [ ] Successful response includes the user's `id`, `firstName`, `lastName`,
   and `email`
-- [X] Error response with status 401 is given when invalid credentials are given
-- [X] Error response with status 400 is given when body validations for the
+- [ ] Error response with status 401 is given when invalid credentials are given
+- [ ] Error response with status 400 is given when body validations for the
   `email`, `firstName`, or `lastName` are violated
-
 
 ### Get the Current User
 
 Returns the information about the current user that is logged in.
 
-- [X] An authenticated user is required for a successful response
-- [X] Successful response includes the user's `id`, `firstName`, `lastName`,
+- [ ] An authenticated user is required for a successful response
+- [ ] Successful response includes the user's `id`, `firstName`, `lastName`,
   and `email`
 
+### Get all Stocks
 
-### Get all Groups
+Returns all stocks.
 
-Returns all groups.
-
-- [X] Seed data exists in the database for groups to be returned.
-- [X] Successful response includes each group in the database.
-- [X] Group data returned includes the `id`, `organizerId`, `name`, `about`,
+- [ ] Seed data exists in the database for groups to be returned.
+- [ ] Successful response includes each group in the database.
+- [ ] Group data returned includes the `id`, `organizerId`, `name`, `about`,
   `type`, `private`, `city`, `state`, `createdAt`, `updatedAt`, `numMembers`,
   and `previewImage`
-
 
 ### Get all Groups joined or organized by the Current User
 
 Returns all the groups either created by the current user or those where the
 current user has a membership.
 
-- [X] An authenticated user is required for a successful response
-- [X] Successful response includes only groups created or joined by the current
+- [ ] An authenticated user is required for a successful response
+- [ ] Successful response includes only groups created or joined by the current
   user
-- [X] Group data returned includes the `id`, `organizerId`, `name`, `about`,
+- [ ] Group data returned includes the `id`, `organizerId`, `name`, `about`,
   `type`, `private`, `city`, `state`, `createdAt`, `updatedAt`, `numMembers`,
   and `previewImage`
-
 
 ### Get details of a Group from an id
 
 Returns the details of a group specified by its id.
 
-- [X] Successful response includes data only for the specified group
-- [X] Group data returned includes the `id`, `organizerId`, `name`, `about`,
+- [ ] Successful response includes data only for the specified group
+- [ ] Group data returned includes the `id`, `organizerId`, `name`, `about`,
   `type`, `private`, `city`, `state`, `createdAt`, `updatedAt`, and `numMembers`
-- [X] Group data returns associated data for `GroupImages`, an array of image
+- [ ] Group data returns associated data for `GroupImages`, an array of image
   data including the `id`, `url`, and `preview`
-- [X] Group data returns associated data for `Organizer`, including the `id`,
+- [ ] Group data returns associated data for `Organizer`, including the `id`,
   `firstName`, and `lastName`
-- [X] Error response with status 404 is given when a group does not exist with
+- [ ] Error response with status 404 is given when a group does not exist with
   the provided `id`
-
 
 ### Create a Group
 
 Creates and returns a new group.
 
-- [X] An authenticated user is required for a successful response
-- [X] New group exists in the database after request
-- [X] Group data returned includes the `id`, `organizerId`, `name`, `about`,
+- [ ] An authenticated user is required for a successful response
+- [ ] New group exists in the database after request
+- [ ] Group data returned includes the `id`, `organizerId`, `name`, `about`,
   `type`, `private`, `city`, `state`, `createdAt`, and `updatedAt`
-- [X] Error response with status 400 is given when body validations for the
+- [ ] Error response with status 400 is given when body validations for the
   `name`, `about`, `type`, `private`, `city`, or `state` are violated
-
 
 ### Add an Image to a Group based on the Group's id
 
 Create and return a new image for a group specified by id.
 
-- [X] An authenticated user is required for a successful response
-- [X] Only the organizer of the group is authorized to add an image
-- [X] New image exists in the database after request
-- [X] Image data returned includes the `id`, `url`, and `preview`
-- [X] Error response with status 404 is given when a group does not exist with
+- [ ] An authenticated user is required for a successful response
+- [ ] Only the organizer of the group is authorized to add an image
+- [ ] New image exists in the database after request
+- [ ] Image data returned includes the `id`, `url`, and `preview`
+- [ ] Error response with status 404 is given when a group does not exist with
   the provided `id`
-
 
 ### Edit a Group
 
 Updates and returns an existing group.
 
-- [X] An authenticated user is required for a successful response
-- [X] Only the owner of the group is authorized to edit
-- [X] Group record is updated in the database after request
-- [X] Group data returned includes the `id`, `organizerId`, `name`, `about`,
+- [ ] An authenticated user is required for a successful response
+- [ ] Only the owner of the group is authorized to edit
+- [ ] Group record is updated in the database after request
+- [ ] Group data returned includes the `id`, `organizerId`, `name`, `about`,
   `type`, `private`, `city`, `state`, `createdAt`, and `updatedAt`
-- [X] Error response with status 400 is given when body validations for the
+- [ ] Error response with status 400 is given when body validations for the
   `name`, `about`, `type`, `private`, `city`, or `state` are violated
-- [X] Error response with status 404 is given when a group does not exist with
+- [ ] Error response with status 404 is given when a group does not exist with
   the provided `id`
-
 
 ### Delete a Group
 
 Deletes an existing group.
 
-- [X] An authenticated user is required for a successful response
-- [X] Only the owner of the group is authorized to delete
-- [X] Group record is removed from the database after request
-- [X] Success response includes a `message` indicating a successful deletion
-- [X] Error response with status 404 is given when a group does not exist with
+- [ ] An authenticated user is required for a successful response
+- [ ] Only the owner of the group is authorized to delete
+- [ ] Group record is removed from the database after request
+- [ ] Success response includes a `message` indicating a successful deletion
+- [ ] Error response with status 404 is given when a group does not exist with
   the provided `id`
-
 
 ### Get all Venues for a Group specified by id
 
 Returns all venues for a group specified by its id.
 
-- [X] Seed data exists in the database for venues to be returned.
-- [X] Successful response includes each venue for a group in the database.
-- [X] Venue data returned includes `id`, `groupId`, `address`, `city`, `state`,
+- [ ] Seed data exists in the database for venues to be returned.
+- [ ] Successful response includes each venue for a group in the database.
+- [ ] Venue data returned includes `id`, `groupId`, `address`, `city`, `state`,
   `lat`, and `lng`
-
 
 ### Create a new Venue for a Group specified by its id
 
 Creates and returns a new venue for a group specified by its id
 
-- [X] An authenticated user is required for a successful response
-- [X] Only the owner of the group or a member of the group with a membership
+- [ ] An authenticated user is required for a successful response
+- [ ] Only the owner of the group or a member of the group with a membership
   status of "co-host" is authorized to create a venue
-- [X] New venue exists in the database after request
-- [X] Venue data returned includes `id`, `groupId`, `address`, `city`, `state`,
+- [ ] New venue exists in the database after request
+- [ ] Venue data returned includes `id`, `groupId`, `address`, `city`, `state`,
   `lat`, and `lng`
-- [X] Error response with status 404 is given when a group does not exist with
+- [ ] Error response with status 404 is given when a group does not exist with
   the provided `id`
-- [X] Error response with status 400 is given when body validations for the
+- [ ] Error response with status 400 is given when body validations for the
   `address`, `city`, `state`, `lat`, or `lng` are violated
-
 
 ### Edit a Venue specified by its id
 
@@ -235,7 +223,6 @@ Returns all the events.
 - [X] Event data returned includes associated `Venue` data, if any, including
   `id`, `city`, and `state`
 
-
 ### Get all Events of a Group specified by its id
 
 Returns all the events of a group specified by its id
@@ -251,7 +238,6 @@ Returns all the events of a group specified by its id
   `id`, `city`, and `state`
 - [X] Error response with status 404 is given when a group does not exist with
   the provided `id`
-
 
 ### Get details of an Event specified by its id
 
@@ -270,7 +256,6 @@ Returns the details of an event specified by its id.
 - [X] Error response with status 404 is given when an event does not exist with
   the provided `id`
 
-
 ### Create an Event for a Group specified by its id
 
 Creates and returns a new event for a group specified by its id
@@ -288,7 +273,6 @@ Creates and returns a new event for a group specified by its id
 - [X] Error response with status 404 is given when a venue does not exist with
   the provided `id`
 
-
 ### Add an Image to an Event based on the Event's id
 
 Create and return a new image for an event specified by id.
@@ -299,7 +283,6 @@ Create and return a new image for an event specified by id.
 - [X] Image data returned includes the `id`, `url`, and `preview`
 - [X] Error response with status 404 is given when an event does not exist with
   the provided `id`
-
 
 ### Edit an Event specified by its id
 
@@ -319,7 +302,6 @@ Edit and returns an event specified by its id
 - [X] Error response with status 404 is given when an event does not exist with
   the provided `id`
 
-
 ### Delete an Event specified by its id
 
 Delete an event specified by its id
@@ -331,7 +313,6 @@ Delete an event specified by its id
 - [X] Success response includes a `message` indicating a successful deletion
 - [X] Error response with status 404 is given when an event does not exist with
   the provided `id`
-
 
 ### Get all Members of a Group based on the Group's id
 
@@ -349,7 +330,6 @@ Returns all the members of a group specified by its id.
 - [X] Error response with status 404 is given when a group does not exist with
   the provided `id`
 
-
 ### Request a Membership for a Group based on the Group's id
 
 Request a new membership for a group specified by id.
@@ -364,7 +344,6 @@ Request a new membership for a group specified by id.
   a pending membership for the group
 - [X] Error response with status 400 is given when the current user already has
   an accepted membership for the group
-
 
 ### Change the status of a membership for a group specified by id
 
@@ -388,7 +367,6 @@ Change the status of a membership for a group specified by id.
 - [X] Error response with status 404 is given when a membership between the user
   and group does not exist
 
-
 ### Delete membership to a group specified by id
 
 Delete a membership to a group specified by id.
@@ -404,7 +382,6 @@ Delete a membership to a group specified by id.
   the provided `id`
 - [X] Error response with status 403 is given when a request is made to delete
   another user's membership when the current user is not the group organizer
-
 
 ### Get all Attendees of an Event specified by its id
 
@@ -422,7 +399,6 @@ Returns the attendees of an event specified by its id.
 - [X] Error response with status 404 is given when an event does not exist with
   the provided `id`
 
-
 ### Request to Attend an Event based on the Event's id
 
 Request attendance for an event specified by id.
@@ -437,7 +413,6 @@ Request attendance for an event specified by id.
   a pending attendance for the event
 - [X] Error response with status 400 is given when the current user already is
   already an accepted attendee for the event
-
 
 ### Change the status of an attendance for an event specified by id
 
@@ -458,7 +433,6 @@ Change the status of an attendance for an event specified by id.
 - [X] Error response with status 404 is given when an attendance between the
   user and event does not exist
 
-
 ### Delete attendance to an event specified by id
 
 Delete an attendance to an event specified by id.
@@ -474,7 +448,6 @@ Delete an attendance to an event specified by id.
   the provided `id`
 - [X] Error response with status 403 is given when a request is made to delete
   another user's membership when the current user is not the group organizer
-
 
 ### Delete an Image for a Group
 
