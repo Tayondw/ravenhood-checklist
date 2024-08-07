@@ -35,6 +35,7 @@ For this project, the README.md file will include the API documentation and the 
 - [ ] Create a Scrum Board detailing the flow of the project - discuss what the members of the group will be doing for the project, what can be contributed and how it will all come together (TO BE COMPLETED BY WEEK 19 - DAY 5)
 - [ ] Create a `.gitignore` that ignores `*.db`, `.env`, `build`, `__pycache__` - see attached .gitignore for examples and what they pertain to
 - [ ] Ensure there are more branches besides main. Branches to consider: `dev`, `auth-setup`, `login`, `sign-up`, `logout`, `get-session`, `validate-login-inputs`, `validate-signup-inputs`
+- [ ] Impose branch protection rules for each branch
 
 ### Authentication Required
 
