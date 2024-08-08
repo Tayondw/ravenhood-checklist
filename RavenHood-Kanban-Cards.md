@@ -246,22 +246,17 @@ Delete a watch_list specified by its id
 - [ ] Success response includes a `message` indicating a successful deletion
 - [ ] Error response with status 404 is given when a watch_list does not exist with the provided `id`
 
-### Add Query Filters to Get All Events
+### Add Query Filters to Get All Stocks
 
-Return events filtered by query parameters.
+Return stocks filtered by query parameters.
 
-- [ ] Query parameters are accepted for `page`, `size`, `name`, `type` and
-  `startDate`
+- [ ] Query parameters are accepted for `page`, `size`, `company_name`, and `ticker_symbol`
 - [ ] Default values are provided for the `page` and `size` parameters
-- [ ] Successful response includes only events in the database that meet the
-  specified query parameters criteria
-- [ ] Event data returned includes the `id`, `groupId`, `venueId`, `name`,
-  `type`, `startDate`, `endDate`, and `previewImage`
-- [ ] Event data returned includes aggregate data for `numAttending`
-- [ ] Event data returned includes associated `Group` data, including `id`,
-  `name`, `city`, and `state`
-- [ ] Event data returned includes associated `Venue` data, if any, including
-  `id`, `city`, and `state`
+- [ ] Successful response includes only stocks in the database that meet the specified query parameters criteria
+- [ ] Stock data returned includes the `id`, `company_name`, `ticker_symbol`, `description`,
+  `current_price`, `ceo`, `employees`, `headquarters`, `createdAt`, `updatedAt`, `founded`, `market_cap`, `price_earnings_ratio`, `dividend_yield`, `average_volume`, `high_today`, `low_today`, `open_price`, `volume`, `fifty_two_week_high`, and `fifty_two_week_low`
+- [ ] Stock data returned includes aggregate data for `num_stocks`
+- [ ] Stock data returns associated data for `Watch_List_Stocks`, a list of dicts of stock data in the watch_list including the `id`, `stock_id`, and `watch_list_id`
+- [ ] Stock data returns associated data for `Current User`, including the `id`, `first_name`, and `last_name`
 - [ ] Successful response includes the `page` and `size` of the returned payload
-- [ ] Error response with status 400 is given when query parameter validations
-  for the `page`, `size`, `name`, `type` or `startDate` are violated
+- [ ] Error response with status 400 is given when query parameter validations for the `page`, `size`, `company_name`, or `ticker_symbol` are violated
