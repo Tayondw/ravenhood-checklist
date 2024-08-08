@@ -250,18 +250,18 @@ Delete a watch_list specified by its id
 
 Return events filtered by query parameters.
 
-- [X] Query parameters are accepted for `page`, `size`, `name`, `type` and
+- [ ] Query parameters are accepted for `page`, `size`, `name`, `type` and
   `startDate`
-- [X] Default values are provided for the `page` and `size` parameters
-- [X] Successful response includes only events in the database that meet the
+- [ ] Default values are provided for the `page` and `size` parameters
+- [ ] Successful response includes only events in the database that meet the
   specified query parameters criteria
-- [X] Event data returned includes the `id`, `groupId`, `venueId`, `name`,
+- [ ] Event data returned includes the `id`, `groupId`, `venueId`, `name`,
   `type`, `startDate`, `endDate`, and `previewImage`
-- [X] Event data returned includes aggregate data for `numAttending`
-- [X] Event data returned includes associated `Group` data, including `id`,
+- [ ] Event data returned includes aggregate data for `numAttending`
+- [ ] Event data returned includes associated `Group` data, including `id`,
   `name`, `city`, and `state`
-- [X] Event data returned includes associated `Venue` data, if any, including
+- [ ] Event data returned includes associated `Venue` data, if any, including
   `id`, `city`, and `state`
-- [X] Successful response includes the `page` and `size` of the returned payload
-- [X] Error response with status 400 is given when query parameter validations
+- [ ] Successful response includes the `page` and `size` of the returned payload
+- [ ] Error response with status 400 is given when query parameter validations
   for the `page`, `size`, `name`, `type` or `startDate` are violated
