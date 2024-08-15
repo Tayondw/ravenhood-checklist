@@ -69,3 +69,5 @@
 - [ ] Section 3's third column has a link with the text "Start a group" (if the user is not logged in, then this link is disabled - light grey text with no rollover or click events)
 - [ ] Section 4 has a "Join Meetup" button centered horizontally.
 - [ ] The layout and element positioning is equivalent to the wireframes.
+
+### Feature: Landing Page - Logged In
